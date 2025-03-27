@@ -41,11 +41,62 @@ This project is an Angular application that implements a dynamic registration fo
 
 4. Open your browser and navigate to `http://localhost:4200`.
 
-## Usage
+## JSON Structure Explanation
 
-- Fill in the registration form with your details.
-- The progress bar will indicate your completion status.
-- Click the "Submit Registration" button to log the form data to the console.
+The form is generated based on a JSON schema defined in the `DynamicFormComponent`. Below is the structure of the JSON schema used:
+
+```json
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 3,
+      "title": "Full Name",
+      "description": "Enter your full name"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "title": "Email Address",
+      "description": "Enter a valid email"
+    },
+    "role": {
+      "type": "string",
+      "enum": ["Student", "Teacher", "Administrator"],
+      "title": "Role",
+      "description": "Select your role"
+    },
+    "school": {
+      "type": "string",
+      "title": "School Name",
+      "description": "Enter school name"
+    },
+    "grade": {
+      "type": "string",
+      "enum": ["Grade 1", "Grade 2", "Grade 3", "Grade 4", "Grade 5"],
+      "title": "Grade Level",
+      "description": "Select your grade"
+    }
+  },
+  "required": ["name", "email", "role"]
+}
+```
+
+### Explanation of Fields
+
+- **name**: A string field that requires a minimum length of 3 characters.
+- **email**: A string field that must be a valid email format.
+- **role**: A dropdown selection with options for Student, Teacher, or Administrator.
+- **school**: A string field for entering the name of the school.
+- **grade**: A dropdown selection for the grade level, available only for students.
+
+## Assumptions Made
+
+- The application assumes that users will have a stable internet connection to load Angular Material components and Google Fonts.
+- The form is designed for educational institutions, and the roles provided are specific to that context.
+- The application does not handle backend integration; it only logs the form data to the console upon submission.
+- The form is designed to be responsive and should work on various screen sizes, but specific mobile optimizations may be required based on user feedback.
 
 ## Contributing
 
