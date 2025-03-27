@@ -1,0 +1,102 @@
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+.jsonforms-control {
+  @apply mb-4;
+}
+
+.jsonforms-control label {
+  @apply block text-sm font-medium text-gray-700 mb-1;
+}
+
+.jsonforms-control input,
+.jsonforms-control select {
+  @apply mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm;
+}
+
+.validation-error {
+  @apply text-red-500 text-sm mt-1;
+}
+
+/* Material Design Overrides */
+.mat-mdc-card {
+  --mdc-elevated-card-container-color: white;
+}
+
+.mat-mdc-form-field {
+  --mdc-filled-text-field-container-color: transparent;
+  --mdc-filled-text-field-focus-active-indicator-color: #3f51b5;
+  --mdc-filled-text-field-hover-active-indicator-color: #3f51b5;
+  --mdc-filled-text-field-focus-label-text-color: #3f51b5;
+}
+
+.mat-mdc-form-field-focus-overlay {
+  background-color: rgba(63, 81, 181, 0.05);
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: #f8f9fa !important;
+}
+
+.mat-mdc-form-field-hint-wrapper, 
+.mat-mdc-form-field-error-wrapper {
+  padding: 0 !important;
+}
+
+.mat-mdc-select-panel {
+  border-radius: 8px;
+  margin-top: 4px !important;
+}
+
+.mat-mdc-option {
+  min-height: 48px !important;
+}
+
+.mat-mdc-option:hover:not(.mdc-list-item--disabled) {
+  background-color: rgba(63, 81, 181, 0.05) !important;
+}
+
+.mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled) {
+  background-color: rgba(63, 81, 181, 0.1) !important;
+}
+
+/* Custom Form Styles */
+.form-field-hint {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 0.75rem;
+  margin-top: 4px;
+}
+
+.required-field::after {
+  content: "*";
+  color: #f44336;
+  margin-left: 4px;
+}
+
+/* Animation */
+.mat-mdc-card {
+  transition: transform 0.3s ease-in-out;
+}
+
+.mat-mdc-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+  .form-container {
+    padding: 1rem;
+  }
+  
+  .form-card {
+    border-radius: 8px;
+  }
+  
+  .form-title {
+    font-size: 1.5rem;
+  }
+}
