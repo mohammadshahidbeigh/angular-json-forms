@@ -16,7 +16,6 @@ This project is an Angular application that implements a dynamic registration fo
 - Angular Material
 - JSON Forms
 - TypeScript
-- HTML/CSS
 
 ## Installation
 
